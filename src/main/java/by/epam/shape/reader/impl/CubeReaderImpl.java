@@ -1,8 +1,9 @@
-package by.epam.shape.reader;
+package by.epam.shape.reader.impl;
 
 
 import by.epam.shape.exception.CubeException;
-import by.epam.shape.validation.CubeValidator;
+import by.epam.shape.reader.CubeReader;
+import by.epam.shape.validator.impl.CubeValidatorImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,13 +14,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class CubeReader {
+public final class CubeReaderImpl implements CubeReader {
     static Logger logger = LogManager.getLogger();
 
+    @Override
     public List<String> readAllLines(String filename) throws CubeException{
-        CubeValidator validator = new CubeValidator();
+        CubeValidatorImpl validator = new CubeValidatorImpl();
         if (!validator.isValidFilepath(filename)){
             throw new CubeException("File path is invalid: " + filename);
         }
@@ -28,7 +29,7 @@ public class CubeReader {
         try (BufferedReader br = Files.newBufferedReader(path)){
             strings = br.lines()
                     .peek(line -> logger.log(Level.DEBUG, "read: {} ", line))
-                    .collect(Collectors.toList());
+                    .toList();
         } catch (IOException e) {
             logger.log(Level.ERROR,"Input error while reading file", e);
             throw new CubeException("Input error while reading file", e);

@@ -9,9 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
-public class CubeFactoryImpl implements CubeFactory {
+public final class CubeFactoryImpl implements CubeFactory {
     static Logger logger = LogManager.getLogger();
     private static final int MINIMUM_PARAMETERS_COUNT = 4;
 
@@ -34,7 +33,7 @@ public class CubeFactoryImpl implements CubeFactory {
                     .map(this::createCube)
                     .filter(Optional::isPresent)
                     .map(Optional::get)
-                    .collect(Collectors.toList());
+                    .toList();
         }
         return Optional.ofNullable(cubeList);
     }

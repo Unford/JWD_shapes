@@ -16,12 +16,12 @@ public class SurfaceAreaCubeSpecification implements CubeSpecification {
 
     @Override
     public boolean specify(Cube cube) {
-        boolean result = false;
+        boolean match = false;
         if (cube != null){
             CubeService service = new CubeServiceImpl();
             double perimeter = service.calculateCubeSurfaceArea(cube).orElse(0.0);
-            result = perimeter >= fromSurfaceArea && perimeter <= toSurfaceArea;
+            match = perimeter >= fromSurfaceArea && perimeter <= toSurfaceArea;
         }
-        return result;
+        return match;
     }
 }

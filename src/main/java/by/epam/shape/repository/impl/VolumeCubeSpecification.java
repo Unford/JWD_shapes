@@ -16,12 +16,12 @@ public class VolumeCubeSpecification implements CubeSpecification {
 
     @Override
     public boolean specify(Cube cube) {
-        boolean result = false;
+        boolean match = false;
         if (cube != null){
             CubeService service = new CubeServiceImpl();
             double perimeter = service.calculateCubeVolume(cube).orElse(0.0);
-            result = perimeter >= fromVolume && perimeter <= toVolume;
+            match = perimeter >= fromVolume && perimeter <= toVolume;
         }
-        return result;
+        return match;
     }
 }

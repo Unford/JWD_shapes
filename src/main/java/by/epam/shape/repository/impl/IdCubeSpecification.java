@@ -14,11 +14,11 @@ public class IdCubeSpecification implements CubeSpecification {
 
     @Override
     public boolean specify(Cube cube) {
-        boolean result = false;
+        boolean match = false;
         if (cube != null){
             long id = cube.getCubeId();
-            result = id >= fromId && id <= toId;
+            match = id >= fromId && id <= toId;
         }
-        return result;
+        return match;
     }
 }

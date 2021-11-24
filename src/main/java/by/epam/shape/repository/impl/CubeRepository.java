@@ -7,7 +7,6 @@ import by.epam.shape.repository.Repository;
 
 import java.util.*;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 
 public class CubeRepository implements Repository {
@@ -45,17 +44,17 @@ public class CubeRepository implements Repository {
 
     @Override
     public List<Cube> query(CubeSpecification specification){
-        return cubes.stream().filter(specification::specify).collect(Collectors.toList());
+        return cubes.stream().filter(specification::specify).toList();
     }
 
     @Override
     public List<Cube> query(Predicate<Cube> predicate) {
-        return cubes.stream().filter(predicate::test).collect(Collectors.toList());
+        return cubes.stream().filter(predicate).toList();
     }
 
     @Override
     public List<Cube> sort(Comparator<? super Cube> comparator) {
-        return cubes.stream().sorted(comparator).collect(Collectors.toList());
+        return cubes.stream().sorted(comparator).toList();
     }
 
     @Override

@@ -18,7 +18,7 @@ public class Cube implements Observable {
         this.center = center;
         this.edge = edge;
 
-        this.notifyObservers();//todo should i use it here?
+        this.notifyObservers();
    }
 
     public long getCubeId() { return cubeId; }

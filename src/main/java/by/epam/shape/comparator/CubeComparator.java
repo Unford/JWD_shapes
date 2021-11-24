@@ -20,22 +20,21 @@ public enum CubeComparator {
     SURFACE_AREA (Comparator.comparingDouble(cube ->
                      CubeWarehouse.getInstance()
                      .getParameters(cube.getCubeId())
-                     .orElseThrow(() -> new RuntimeException("Warehouse hasn't this cube id: " + cube.getCubeId()))
+                     .get()
                      .surfaceArea())),
 
     PERIMETER (Comparator.comparingDouble(cube ->
                      CubeWarehouse.getInstance()
                     .getParameters(cube.getCubeId())
-                    .orElseThrow(() -> new RuntimeException("Warehouse hasn't this cube id: " + cube.getCubeId()))
+                    .get()
                     .perimeter())),
 
     VOLUME (Comparator.comparingDouble(cube ->
             CubeWarehouse.getInstance()
                     .getParameters(cube.getCubeId())
-                    .orElseThrow(() -> new RuntimeException("Warehouse hasn't this cube id: " + cube.getCubeId()))
+                    .get()
                     .volume()));
 
-    //private static final CubeParameters EMPTY_PARAMETERS = new CubeParameters(0.0, 0.0, 0.0);//todo change to exception?
     CubeComparator(Comparator<Cube> comparator){
         this.comparator = comparator;
     }

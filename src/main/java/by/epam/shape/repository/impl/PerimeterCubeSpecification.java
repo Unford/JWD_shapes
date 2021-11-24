@@ -16,13 +16,13 @@ public class PerimeterCubeSpecification implements CubeSpecification {
 
     @Override
     public boolean specify(Cube cube) {
-        boolean result = false;
+        boolean match = false;
         if (cube != null){
             CubeService service = new CubeServiceImpl();
             double perimeter = service.calculateCubePerimeter(cube).orElse(0.0);
-            result = perimeter >= fromPerimeter && perimeter <= toPerimeter;
+            match = perimeter >= fromPerimeter && perimeter <= toPerimeter;
         }
-        return result;
+        return match;
     }
 
 }

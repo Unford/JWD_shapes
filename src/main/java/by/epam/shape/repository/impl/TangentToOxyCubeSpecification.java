@@ -8,11 +8,11 @@ import by.epam.shape.service.impl.CubeServiceImpl;
 public class TangentToOxyCubeSpecification implements CubeSpecification {
     @Override
     public boolean specify(Cube cube) {
-        boolean result = false;
+        boolean match = false;
         if (cube != null){
             CubeService service = new CubeServiceImpl();
-            result = service.isCubeTangentToOxy(cube);
+            match = service.isCubeTangentToOxy(cube);
         }
-        return result;
+        return match;
     }
 }
