@@ -12,6 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CubeServiceTest {
     private CubeService service = new CubeServiceImpl();
+
     private Cube cubeFirstExample = new Cube(new Point(1.4, 2.3, 4.5), 6.3);
     private Cube cubeSecondExample = new Cube(new Point(5, 5, 5), 10);
     private Cube cubeThirdExample = new Cube(new Point(54.4, -21.3, 65.5), 51.52);
