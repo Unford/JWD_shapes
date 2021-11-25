@@ -1,4 +1,4 @@
 package test.epam.shape;
 
-public class CubeWarehouseTest {
+public class CubeWarehouseTest {//todo testWareHouse
 }

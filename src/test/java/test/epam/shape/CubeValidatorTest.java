@@ -2,8 +2,6 @@ package test.epam.shape;
 
 import by.epam.shape.validator.CubeValidator;
 import by.epam.shape.validator.impl.CubeValidatorImpl;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -12,12 +10,8 @@ import static org.assertj.core.api.Assertions.*;
 
 
 public class CubeValidatorTest {
-    private CubeValidator validator;
+    private CubeValidator validator = new CubeValidatorImpl();
 
-    @BeforeClass
-    public void setUp(){
-        validator = new CubeValidatorImpl();
-    }
 
     @Test(description = "Validation cube strings with regex",
             dataProvider = "dataForCubeLineValidation")
@@ -60,8 +54,4 @@ public class CubeValidatorTest {
         };
     }
 
-    @AfterClass
-    public void tierDown(){
-        validator = null;
-    }
 }

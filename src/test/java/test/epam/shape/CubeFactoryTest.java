@@ -11,12 +11,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CubeFactoryTest {
-    private CubeFactory factory;
+    private CubeFactory factory = new CubeFactoryImpl();;
 
-    @BeforeClass
-    public void setUp(){
-        factory = new CubeFactoryImpl();
-    }
 
     @Test(description = "creating cube from valid parameters",
             dataProvider = "dataForCorrectCubeFactory")
@@ -56,8 +52,5 @@ public class CubeFactoryTest {
         };
     }
 
-    @AfterClass
-    public void tierDown(){
-        factory = null;
-    }
+
 }
