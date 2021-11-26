@@ -10,12 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 
 public class CubeReaderTest {
-    private CubeReader reader;
-
-    @BeforeClass
-    public void setUp(){
-        reader = new CubeReaderImpl();
-    }
+    private CubeReader reader = new CubeReaderImpl();;
 
     @Test(description = "read all lines in correct file",
             dataProvider = "dataForCorrectLineReader")
@@ -38,7 +33,7 @@ public class CubeReaderTest {
         };
     }
 
-    @Test(description = "test throwing cube exception",
+    @Test(description = "test reader throw cube exception",
             dataProvider = "dataForIncorrectReader",
             expectedExceptions = CubeException.class)
     public void testReadAllException(String filepath)throws CubeException {
@@ -53,8 +48,4 @@ public class CubeReaderTest {
         };
     }
 
-    @AfterClass
-    public void tierDown(){
-        reader = null;
-    }
 }

@@ -2,22 +2,22 @@ package test.epam.shape;
 
 import by.epam.shape.validator.CubeValidator;
 import by.epam.shape.validator.impl.CubeValidatorImpl;
+
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.assertj.core.api.Assertions.*;
 
 
 
 public class CubeValidatorTest {
     private CubeValidator validator = new CubeValidatorImpl();
 
-
-    @Test(description = "Validation cube strings with regex",
+    @Test(description = "Validation cube strings",
             dataProvider = "dataForCubeLineValidation")
     public void testCubeLineValidation(String lineWithParameters, boolean expected){
         boolean actual = validator.isValidCubeLine(lineWithParameters);
-        assertThat(actual).isEqualTo(expected);
+        Assert.assertEquals(actual, expected);
     }
 
     @DataProvider(name = "dataForCubeLineValidation")
@@ -33,11 +33,11 @@ public class CubeValidatorTest {
         };
     }
 
-    @Test(description = "Validation double strings with regex",
+    @Test(description = "Validation string with double",
             dataProvider = "dataForDoubleValidation")
     public void testDoubleValidation(String lineWithDouble, boolean expected){
         boolean actual = validator.isValidDouble(lineWithDouble);
-        assertThat(actual).isEqualTo(expected);
+        Assert.assertEquals(actual, expected);
     }
 
     @DataProvider(name = "dataForDoubleValidation")
@@ -50,7 +50,6 @@ public class CubeValidatorTest {
                 {"2..4", false},
                 {"-5.23E-4", true},
                 {"-530.00100", true},
-
         };
     }
 

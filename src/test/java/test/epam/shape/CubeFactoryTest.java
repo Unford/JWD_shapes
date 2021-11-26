@@ -4,15 +4,14 @@ import by.epam.shape.entity.Cube;
 import by.epam.shape.entity.Point;
 import by.epam.shape.factory.CubeFactory;
 import by.epam.shape.factory.impl.CubeFactoryImpl;
-import org.testng.annotations.*;
 
+import org.testng.annotations.*;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CubeFactoryTest {
     private CubeFactory factory = new CubeFactoryImpl();;
-
 
     @Test(description = "creating cube from valid parameters",
             dataProvider = "dataForCorrectCubeFactory")
@@ -51,6 +50,5 @@ public class CubeFactoryTest {
                 {new Double[]{1.1, 2.2}},
         };
     }
-
 
 }

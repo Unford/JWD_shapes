@@ -25,7 +25,12 @@ public class CubeWarehouse {
     public void putParameters(Long id, CubeParameters parameters) {
          cubeParametersMap.put(id, parameters);
     }
+
     public Map<Long, CubeParameters> getCubeParametersMap(){
         return Map.copyOf(cubeParametersMap);
+    }
+
+    public void clear(){
+        cubeParametersMap.clear();
     }
 }

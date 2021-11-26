@@ -4,7 +4,9 @@ import by.epam.shape.entity.Cube;
 import by.epam.shape.entity.Point;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
+
 import org.assertj.core.data.Offset;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -80,7 +82,7 @@ public class CubeServiceTest {
     @Test(dataProvider = "dataForTangentToOxyTest")
     public void testTangentToOxy(Cube cube, boolean expected){
         boolean actual = service.isCubeTangentToOxy(cube);
-        assertThat(actual).isEqualTo(expected);
+        Assert.assertEquals(actual, expected);
     }
 
     @DataProvider(name = "dataForTangentToOxyTest")
