@@ -21,7 +21,7 @@ public class CubeWarehouseTest {
     @Test
     public void testCubeCreateObserver(){
         for (int i = 0; i < 5; i++) {
-            Cube cube = new Cube(null, 0);
+            new Cube(null, 0);
         }
         Map<Long, CubeParameters> actual = warehouse.getCubeParametersMap();
         List<Long> expected = List.of(1L, 2L, 3L, 4L, 5L);

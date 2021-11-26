@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 
 
 public class CubeRepository implements Repository {
-    private List<Cube> cubes = new ArrayList<>();
+    private final List<Cube> cubes = new ArrayList<>();
 
     @Override
     public int size() {

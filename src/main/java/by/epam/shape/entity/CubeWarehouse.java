@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class CubeWarehouse {
-    private Map<Long, CubeParameters> cubeParametersMap = new HashMap<>();
+    private final Map<Long, CubeParameters> cubeParametersMap = new HashMap<>();
 
     private CubeWarehouse(){}
 
