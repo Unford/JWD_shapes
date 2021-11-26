@@ -5,9 +5,9 @@ import by.epam.shape.repository.CubeSpecification;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
 
-public class SurfaceAreaCubeSpecification implements CubeSpecification {
-    private double fromSurfaceArea;
-    private double toSurfaceArea;
+public final class SurfaceAreaCubeSpecification implements CubeSpecification {
+    private final double fromSurfaceArea;
+    private final double toSurfaceArea;
 
     public SurfaceAreaCubeSpecification(double fromSurfaceArea, double toSurfaceArea){
         this.fromSurfaceArea = fromSurfaceArea;

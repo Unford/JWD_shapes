@@ -5,9 +5,9 @@ import by.epam.shape.repository.CubeSpecification;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
 
-public class VolumeCubeSpecification implements CubeSpecification {
-    private double fromVolume;
-    private double toVolume;
+public final class VolumeCubeSpecification implements CubeSpecification {
+    private final double fromVolume;
+    private final double toVolume;
 
     public VolumeCubeSpecification(double fromVolume, double toVolume){
         this.fromVolume = fromVolume;

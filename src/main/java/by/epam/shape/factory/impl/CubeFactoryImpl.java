@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Optional;
 
-public final class CubeFactoryImpl implements CubeFactory {
+public class CubeFactoryImpl implements CubeFactory {
     static Logger logger = LogManager.getLogger();
     private static final int MINIMUM_PARAMETERS_COUNT = 4;
 

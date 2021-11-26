@@ -3,9 +3,9 @@ package by.epam.shape.repository.impl;
 import by.epam.shape.entity.Cube;
 import by.epam.shape.repository.CubeSpecification;
 
-public class IdCubeSpecification implements CubeSpecification {
-    private long fromId;
-    private long toId;
+public final class IdCubeSpecification implements CubeSpecification {
+    private final long fromId;
+    private final long toId;
 
     public IdCubeSpecification(long fromId, long toId){
         this.fromId = fromId;

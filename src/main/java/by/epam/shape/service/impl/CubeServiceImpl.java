@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
 
-public final class CubeServiceImpl implements CubeService {
+public class CubeServiceImpl implements CubeService {
     static Logger logger = LogManager.getLogger();
 
    @Override

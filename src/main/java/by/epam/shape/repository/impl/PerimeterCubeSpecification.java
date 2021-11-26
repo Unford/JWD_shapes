@@ -5,9 +5,9 @@ import by.epam.shape.repository.CubeSpecification;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
 
-public class PerimeterCubeSpecification implements CubeSpecification {
-    private double fromPerimeter;
-    private double toPerimeter;
+public final class PerimeterCubeSpecification implements CubeSpecification {
+    private final double fromPerimeter;
+    private final double toPerimeter;
 
     public PerimeterCubeSpecification(double fromPerimeter, double toPerimeter){
         this.fromPerimeter = fromPerimeter;

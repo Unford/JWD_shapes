@@ -5,7 +5,7 @@ import by.epam.shape.repository.CubeSpecification;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
 
-public class TangentToOxzCubeSpecification implements CubeSpecification {
+public final class TangentToOxzCubeSpecification implements CubeSpecification {
     @Override
     public boolean specify(Cube cube) {
         boolean match = false;
