@@ -5,6 +5,7 @@ import by.epam.shape.entity.Point;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.validator.CubeValidator;
 import by.epam.shape.validator.impl.CubeValidatorImpl;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,16 +56,6 @@ public final class CubeServiceImpl implements CubeService {
        }
        return result;
    }
-   //todo
-    /*
-                 .3------7
-               .' |    .'|
-              1---+--5'  |
-              |   |  |   |
-              |  ,2--+---6
-              |.'    | .'
-              0------4'
-       */
 
    @Override
    public Optional<List<Point>> calculateCubeVertex(Cube cube){

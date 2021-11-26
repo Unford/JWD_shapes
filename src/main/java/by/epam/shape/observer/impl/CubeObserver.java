@@ -7,6 +7,7 @@ import by.epam.shape.observer.CubeEvent;
 import by.epam.shape.observer.Observer;
 import by.epam.shape.service.CubeService;
 import by.epam.shape.service.impl.CubeServiceImpl;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -3,6 +3,7 @@ package by.epam.shape.parser.impl;
 import by.epam.shape.exception.CubeException;
 import by.epam.shape.parser.CubeParser;
 import by.epam.shape.validator.impl.CubeValidatorImpl;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

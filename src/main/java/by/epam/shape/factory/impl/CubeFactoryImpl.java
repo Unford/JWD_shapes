@@ -17,7 +17,7 @@ public final class CubeFactoryImpl implements CubeFactory {
     @Override
     public Optional<Cube> createCube(Double[] parameters) {
         Cube cube = null;
-        if (parameters != null && parameters.length >= MINIMUM_PARAMETERS_COUNT && parameters[3] > 0){//todo param[3] > 0???
+        if (parameters != null && parameters.length >= MINIMUM_PARAMETERS_COUNT && parameters[3] > 0){
             Point cubeCenter = new Point(parameters[0], parameters[1], parameters[2]);
             cube = new Cube(cubeCenter, parameters[3]);
             logger.log(Level.INFO, "Cube is successfully created: " + cube);

@@ -2,8 +2,6 @@ package by.epam.shape.validator;
 
 import by.epam.shape.entity.Cube;
 
-
-
 public interface CubeValidator {
 
     boolean isValidFilepath(String filepath);

@@ -1,9 +1,9 @@
 package by.epam.shape.reader.impl;
 
-
 import by.epam.shape.exception.CubeException;
 import by.epam.shape.reader.CubeReader;
 import by.epam.shape.validator.impl.CubeValidatorImpl;
+
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
