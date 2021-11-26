@@ -18,8 +18,8 @@ public class CubeFactoryTest {
     public void testCorrectCubeFactory(Double[] parameters, Cube expected){
         Optional<Cube> actual = factory.createCube(parameters);
         assertThat(actual.get())
-                .extracting(Cube::getCenter, Cube::getEdge).
-                containsExactly(expected.getCenter(), expected.getEdge());
+                .extracting(Cube::getCenter, Cube::getEdge)
+                .containsExactly(expected.getCenter(), expected.getEdge());
     }
 
     @DataProvider(name = "dataForCorrectCubeFactory")
@@ -44,9 +44,7 @@ public class CubeFactoryTest {
     public Object[][] dataForDoubleValidation(){
         return new Object[][]{
                 {new Double[]{11.322, 43.52, 15.2, -4.3}},
-
                 {null},
-
                 {new Double[]{1.1, 2.2}},
         };
     }
