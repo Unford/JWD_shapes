@@ -3,8 +3,8 @@ package test.epam.shape;
 import by.epam.shape.comparator.CubeComparators;
 import by.epam.shape.entity.Cube;
 import by.epam.shape.entity.Point;
-import by.epam.shape.repository.Repository;
-import by.epam.shape.repository.impl.CubeRepository;
+import by.epam.shape.repository.CubeRepository;
+import by.epam.shape.repository.impl.CubeRepositoryImpl;
 import by.epam.shape.repository.impl.IdCubeSpecification;
 import by.epam.shape.repository.impl.VolumeCubeSpecification;
 import by.epam.shape.service.CubeService;
@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class CubeRepositoryTest {
     private CubeService service = new CubeServiceImpl();
-    private Repository repository = new CubeRepository();
+    private CubeRepository repository = new CubeRepositoryImpl();
 
     @BeforeTest
     public void init(){
@@ -37,7 +37,7 @@ public class CubeRepositoryTest {
             dataProvider = "dataForIdQueryTest")
     public void testIdCubeRepositoryQuery(long fromId, long toId, List<Long> expected){
         List<Cube> actual = repository.query(new IdCubeSpecification(fromId, toId));
-        assertThat(actual).extracting(cube -> cube.getCubeId()).containsExactlyElementsOf(expected);
+        assertThat(actual).extracting(Cube::getCubeId).containsExactlyElementsOf(expected);
 
     }
 
