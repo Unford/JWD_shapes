@@ -1,4 +1,4 @@
-package test.epam.shape;
+package test.epam.shape.reader;
 
 import by.epam.shape.exception.CubeException;
 import by.epam.shape.reader.CubeReader;

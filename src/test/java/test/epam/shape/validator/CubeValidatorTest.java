@@ -1,4 +1,4 @@
-package test.epam.shape;
+package test.epam.shape.validator;
 
 import by.epam.shape.validator.CubeValidator;
 import by.epam.shape.validator.impl.CubeValidatorImpl;

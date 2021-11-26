@@ -1,4 +1,4 @@
-package test.epam.shape;
+package test.epam.shape.repository;
 
 import by.epam.shape.comparator.CubeComparators;
 import by.epam.shape.entity.Cube;

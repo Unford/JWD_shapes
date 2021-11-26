@@ -1,4 +1,4 @@
-package test.epam.shape;
+package test.epam.shape.warehouse;
 
 import by.epam.shape.entity.Cube;
 import by.epam.shape.entity.CubeParameters;
