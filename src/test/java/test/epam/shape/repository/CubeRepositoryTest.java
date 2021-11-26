@@ -1,6 +1,6 @@
 package test.epam.shape.repository;
 
-import by.epam.shape.comparator.CubeComparators;
+import by.epam.shape.comparator.CubeComparator;
 import by.epam.shape.entity.Cube;
 import by.epam.shape.entity.Point;
 import by.epam.shape.repository.CubeRepository;
@@ -69,7 +69,7 @@ public class CubeRepositoryTest {
 
     @Test(description = "check repository perimeter sort")
     public void testPerimeterCubeRepositorySort(){
-        List<Cube> actual = repository.sort(CubeComparators.PERIMETER.reversed());
+        List<Cube> actual = repository.sort(CubeComparator.PERIMETER.reversed());
         List<Double> expected = List.of(144.0, 120.0, 96.0, 72.0, 60.0, 48.0, 48.0, 36.0, 24.0, 12.0);
         assertThat(actual).extracting(cube -> DoubleRounder.round(
                 service.calculateCubePerimeter(cube).getAsDouble(), 3))
@@ -78,7 +78,7 @@ public class CubeRepositoryTest {
 
     @Test(description = "check repository center sort")
     public void testCenterCubeRepositorySort(){
-        List<Cube> actual = repository.sort(CubeComparators.CENTER_Y);
+        List<Cube> actual = repository.sort(CubeComparator.CENTER_Y);
         List<Double> expected = List.of(0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 3.0);
         assertThat(actual).extracting(cube -> cube.getCenter().y())
                 .containsExactlyElementsOf(expected);
