@@ -25,7 +25,7 @@ public final class CubeServiceImpl implements CubeService {
 
        if (validator.isValidCube(cube)){
            double surfaceArea = 6 * Math.pow(cube.getEdge(), 2.0);
-           logger.log(Level.INFO, "Calculated surface area for {} = " + surfaceArea, cube);
+           logger.log(Level.INFO, "Calculated surface area for {} = {}", cube, surfaceArea);
            result = OptionalDouble.of(surfaceArea);
        }
        return result;
@@ -38,7 +38,7 @@ public final class CubeServiceImpl implements CubeService {
 
        if (validator.isValidCube(cube)){
            double volume = Math.pow(cube.getEdge(), 3.0);
-           logger.log(Level.INFO, "Calculated volume for {} = " + volume, cube);
+           logger.log(Level.INFO, "Calculated volume for {} = {}", cube, volume);
            result = OptionalDouble.of(volume);
        }
        return result;
@@ -51,7 +51,7 @@ public final class CubeServiceImpl implements CubeService {
 
        if (validator.isValidCube(cube)){
            double perimeter = 12 * cube.getEdge();
-           logger.log(Level.INFO, "Calculated perimeter for {} = " + perimeter, cube);
+           logger.log(Level.INFO, "Calculated perimeter for {} = {}", cube, perimeter);
            result = OptionalDouble.of(perimeter);
        }
        return result;
@@ -116,25 +116,22 @@ public final class CubeServiceImpl implements CubeService {
    @Override
    public boolean isCubeTangentToOxy(Cube cube){
        CubeValidator validator = new CubeValidatorImpl();
-       boolean result = validator.isValidCube(cube) &&
+       return validator.isValidCube(cube) &&
                cube.getCenter().z() == cube.getEdge() / 2;
-       return result;
    }
 
    @Override
    public boolean isCubeTangentToOxz(Cube cube){
        CubeValidator validator = new CubeValidatorImpl();
-       boolean result = validator.isValidCube(cube) &&
+       return validator.isValidCube(cube) &&
                cube.getCenter().y() == cube.getEdge() / 2;
-       return result;
    }
 
    @Override
    public boolean isCubeTangentToOyz(Cube cube){
        CubeValidator validator = new CubeValidatorImpl();
-       boolean result = validator.isValidCube(cube) &&
+       return validator.isValidCube(cube) &&
                cube.getCenter().x() == cube.getEdge() / 2;
-       return result;
    }
 
    @Override

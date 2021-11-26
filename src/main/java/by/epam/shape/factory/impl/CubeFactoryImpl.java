@@ -20,7 +20,7 @@ public final class CubeFactoryImpl implements CubeFactory {
         if (parameters != null && parameters.length >= MINIMUM_PARAMETERS_COUNT && parameters[3] > 0){
             Point cubeCenter = new Point(parameters[0], parameters[1], parameters[2]);
             cube = new Cube(cubeCenter, parameters[3]);
-            logger.log(Level.INFO, "Cube is successfully created: " + cube);
+            logger.log(Level.INFO, "Cube is successfully created: {}", cube);
         }
         return Optional.ofNullable(cube);
     }
@@ -28,7 +28,7 @@ public final class CubeFactoryImpl implements CubeFactory {
     @Override
     public Optional<List<Cube>> createCubeList(List<Double[]> parameterList) {
         List<Cube> cubeList = null;
-        if (parameterList != null && parameterList.size() != 0){
+        if (parameterList != null && !parameterList.isEmpty()){
             cubeList = parameterList.stream()
                     .map(this::createCube)
                     .filter(Optional::isPresent)

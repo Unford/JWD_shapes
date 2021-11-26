@@ -26,12 +26,12 @@ public class CubeAttributeParser implements CubeParser {
         parsedData = listOfParameters.stream()
                 .map(String::trim)
                 .filter(validator::isValidCubeLine)
-                .peek(line -> logger.log(Level.DEBUG, "Valid parameter string: " + line))
+                .peek(line -> logger.log(Level.DEBUG, "Valid parameter string: {}", line))
                 .map(this::parseCubeString)
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .toList();
-        logger.log(Level.INFO, "Parsing is successful: " + parsedData.stream().map(Arrays::toString).toList());
+        logger.log(Level.INFO, "Parsing is successful: {}", parsedData.stream().map(Arrays::toString).toList());
         return parsedData;
     }
 

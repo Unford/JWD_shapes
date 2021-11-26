@@ -33,7 +33,6 @@ public final class CubeValidatorImpl implements CubeValidator {
 
     @Override
     public boolean isValidCube(Cube cube){
-        boolean result = cube != null && cube.getEdge() > 0 && cube.getCenter() != null;
-        return result;
+        return cube != null && cube.getEdge() > 0 && cube.getCenter() != null;
     }
 }

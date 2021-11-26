@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.util.List;
 
 public class CubeReaderTest {
-    private CubeReader reader = new CubeReaderImpl();;
+    private CubeReader reader = new CubeReaderImpl();
 
     @Test(description = "read all lines in correct file",
             dataProvider = "dataForCorrectLineReader")

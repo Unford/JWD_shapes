@@ -15,7 +15,7 @@ public class CubeWarehouse {
     }
 
     private static class CubeWarehouseHolder{
-        private final static CubeWarehouse INSTANCE = new CubeWarehouse();
+        private static final CubeWarehouse INSTANCE = new CubeWarehouse();
     }
 
     public Optional<CubeParameters> getParameters(long key) {

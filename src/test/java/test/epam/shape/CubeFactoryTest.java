@@ -11,14 +11,14 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CubeFactoryTest {
-    private CubeFactory factory = new CubeFactoryImpl();;
+    private CubeFactory factory = new CubeFactoryImpl();
 
     @Test(description = "creating cube from valid parameters",
             dataProvider = "dataForCorrectCubeFactory")
     public void testCorrectCubeFactory(Double[] parameters, Cube expected){
         Optional<Cube> actual = factory.createCube(parameters);
         assertThat(actual.get())
-                .extracting(cube -> cube.getCenter(), cube -> cube.getEdge()).
+                .extracting(Cube::getCenter, Cube::getEdge).
                 containsExactly(expected.getCenter(), expected.getEdge());
     }
 
